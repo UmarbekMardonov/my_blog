@@ -1,0 +1,163 @@
+{% load static %}
+{% include 'base.html' %}
+{% block content %}
+<div class="wrapper">
+    <div class="sidebar">
+        {% include 'profile.html' %}
+        <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+            <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+        </div>
+    </div>
+    <div class="content">
+        {% include 'navbar.html' %}
+        <div class="container py-5 px-2 bg-primary">
+            <div class="row py-5 px-4">
+                <div class="col-sm-6 text-center text-md-left">
+                    <h1 class="mb-3 mb-md-0 text-white text-uppercase font-weight-bold">Blog Detail</h1>
+                </div>
+                <div class="col-sm-6 text-center text-md-right">
+                    <div class="d-inline-flex pt-2">
+                        <h4 class="m-0 text-white"><a class="text-white" href="{% url 'home' %}">Home</a></h4>
+                        <h4 class="m-0 text-white px-2">/</h4>
+                        <h4 class="m-0 text-white">Blog Detail</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5 px-2 bg-white">
+            <div class="row px-4">
+                {% for i in detail %}
+                <div class="col-12">
+                    <img class="img-fluid mb-4" src="{{ i.image.url }}" alt="Image">
+                    <h2 class="mb-3 font-weight-bold">{{ i.title}}</h2>
+                    <div class="d-flex">
+                        <p class="mr-3 text-muted"><i class="fa fa-calendar-alt"></i>{{i.published_at }}</p>
+                        <p class="mr-3 text-muted"><i class="fa fa-folder"></i> Web Design</p>
+                        <p class="mr-3 text-muted"><i class="fa fa-comments"></i>{{i.comment_count}}</p>
+                    </div>
+                    <p>{{ i.content }}</p>
+                    <h3 class="mb-3 font-weight-bold">Est dolor lorem et ea</h3>
+                    <img class="w-50 float-left mr-4 mb-3" src="{% static 'img/blog-1.jpg' %}" alt="Image">
+                    <p>Diam dolor est labore duo invidunt ipsum clita et, sed et lorem voluptua tempor invidunt at est
+                        sanctus sanctus. Clita dolores sit kasd diam takimata justo diam lorem sed. Magna amet sed rebum
+                        eos. Clita no magna no dolor erat diam tempor rebum consetetur, sanctus labore sed nonumy diam
+                        lorem amet eirmod. No at tempor sea diam kasd, takimata ea nonumy elitr sadipscing gubergren
+                        erat. Gubergren at lorem invidunt sadipscing rebum sit amet ut ut, voluptua diam dolores at
+                        sadipscing stet. Clita dolor amet dolor ipsum vero ea ea eos. Invidunt sed diam dolores takimata
+                        dolor dolore dolore sit. Sit ipsum erat amet lorem et, magna sea at sed et eos. Accusam eirmod
+                        kasd lorem clita sanctus ut consetetur et. Et duo tempor sea kasd clita ipsum et. Takimata kasd
+                        diam justo est eos erat aliquyam et ut. Ea sed sadipscing no justo et eos labore, gubergren
+                        ipsum magna dolor lorem dolore, elitr aliquyam takimata sea kasd dolores diam, amet et est
+                        accusam labore eirmod vero et voluptua. Amet labore clita duo et no. Rebum voluptua magna eos
+                        magna, justo gubergren labore sit voluptua eos. Dolores et no stet magna et gubergren amet dolor
+                        sit, lorem dolore est vero et.</p>
+                </div>
+                <div class="col-12 py-4">
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                    <a href class="btn btn-sm btn-outline-primary mb-1">Lorem</a>
+                </div>
+                <div class="col-12 py-4">
+                    <div class="btn-group btn-group-lg w-100">
+                        <button type="button" class="btn btn-outline-primary"><i class="fa fa-angle-left mr-2"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="btn btn-outline-primary">Next<i class="fa fa-angle-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 py-4">
+                    <h3 class="mb-4 font-weight-bold">3 Comments</h3>
+                    <div class="media mb-4">
+                        <img src="{% static 'img/user.jpg' %}" alt="Image" class="mr-3 mt-1 rounded-circle"
+                             style="width:60px;">
+                        <div class="media-body">
+                            <h4>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.
+                            </p>
+                            <button class="btn btn-sm btn-light">Reply</button>
+                        </div>
+                    </div>
+                    <div class="media mb-4">
+                        <img src="{% static 'img/user.jpg' %}" alt="Image" class="mr-3 mt-1 rounded-circle"
+                             style="width:60px;">
+                        <div class="media-body">
+                            <h4>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.
+                            </p>
+                            <button class="btn btn-sm btn-light">Reply</button>
+                            <div class="media mt-4">
+                                <img src="{% static 'img/user.jpg' %}" alt="Image" class="mr-3 mt-1 rounded-circle"
+                                     style="width:60px;">
+                                <div class="media-body">
+                                    <h4>John Doe <small><i>01 Jan 2045 at 12:00pm</i></small></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                                    <button class="btn btn-sm btn-light">Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3 class="mb-4 font-weight-bold">Leave a comment</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" class="form-control" id="website">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Leave Comment" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+
+        <div class="container py-4 bg-secondary text-center">
+            <p class="m-0 text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
+                by <a class="text-white font-weight-bold" href="https://htmlcodex.com/">HTML Codex</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+
+<script src="{% static 'mail/jqBootstrapValidation.min.js' %}" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+<script src="{% static 'mail/contact.js' %}" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+
+<script src="{% static 'js/main.js' %}" type="9a48bbfbca62161bd7e2f670-text/javascript"></script>
+<script src="https://demo.htmlcodex.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="9a48bbfbca62161bd7e2f670-|49" defer></script>
+
+<!-- Mirrored from demo.htmlcodex.com/1049/personal-blog-template/single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Oct 2023 03:46:06 GMT -->
+{% endblock %}

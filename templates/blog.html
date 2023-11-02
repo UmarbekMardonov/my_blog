@@ -1,0 +1,82 @@
+{% load static %}
+{% include 'base.html' %}
+{% block content %}
+    <div class="wrapper">
+        <div class="sidebar">
+            {% include 'profile.html' %}
+            <div class="sidebar-icon d-flex flex-column h-100 justify-content-center text-right">
+                <i class="fas fa-2x fa-angle-double-right text-primary"></i>
+            </div>
+        </div>
+        <div class="content">
+
+            {% include 'navbar.html' %}
+
+            <div class="container py-5 px-2 bg-primary">
+                <div class="row py-5 px-4">
+                    <div class="col-sm-6 text-center text-md-left">
+                        <h1 class="mb-3 mb-md-0 text-white text-uppercase font-weight-bold">My Blog</h1>
+                    </div>
+                    <div class="col-sm-6 text-center text-md-right">
+                        <div class="d-inline-flex pt-2">
+                            <h4 class="m-0 text-white"><a class="text-white" href="{% url 'home' %}">Home</a></h4>
+                            <h4 class="m-0 text-white px-2">/</h4>
+                            <h4 class="m-0 text-white">My Blog</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container bg-white pt-5">
+                <div class="row blog-item px-3 pb-5">
+                    {% for i in list %}
+                        <div class="col-md-5">
+                            <img class="img-fluid mb-4 mb-md-0" src="{{ i.image.url }}" alt="Image">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 class="mt-md-4 px-md-3 mb-2 py-2 bg-white font-weight-bold">{{ i.title }}</h3>
+                            <div class="d-flex mb-3">
+                                <small class="mr-2 text-muted"><i class="fa fa-calendar-alt"></i>{{ i.published_at }}
+                                </small>
+                                <small class="mr-2 text-muted"><i class="fa fa-folder"></i> Web Design</small>
+                                <small class="mr-2 text-muted"><i class="fa fa-comments"></i>{{ i.comment_count }}
+                                </small>
+                            </div>
+                            <p>{{ i.description }}</p>
+                            <a class="btn btn-link p-0" href>Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="container py-4 bg-secondary text-center">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.
+                    Designed
+                    by <a class="text-white font-weight-bold" href="https://htmlcodex.com/">HTML Codex</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="ca917de6b4da96868b5b9807-text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+            type="ca917de6b4da96868b5b9807-text/javascript"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}" type="ca917de6b4da96868b5b9807-text/javascript"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"
+            type="ca917de6b4da96868b5b9807-text/javascript"></script>
+
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"
+            type="ca917de6b4da96868b5b9807-text/javascript"></script>
+    <script src="{% static 'mail/contact.js' %}" type="ca917de6b4da96868b5b9807-text/javascript"></script>
+
+    <script src="{% static 'js/main.js' %}" type="ca917de6b4da96868b5b9807-text/javascript"></script>
+    <script src="https://demo.htmlcodex.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+            data-cf-settings="ca917de6b4da96868b5b9807-|49" defer></script>
+{% endblock %}
+<!-- Mirrored from demo.htmlcodex.com/1049/personal-blog-template/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 26 Oct 2023 03:46:04 GMT -->
